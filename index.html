@@ -15,7 +15,11 @@
     <div class="alarm">
       <label for="inputHour">Ingrese o seleccione la hora de la alarma</label>
       <input type="time" name="inputHour" id="inputHour" required>
-      <button aria-label="Set Alarm" title="Set Alarm">Set Alarm</button>
+      <button class="setAlarm" onclick="setAlarm(this);" aria-label="Set Alarm" title="Set Alarm">Set Alarm</button>
+    </div>
+    <div class="snooze">
+      <button class="snoozeAlarm" onclick="snoozeAlarm();" aria-label="Snooze 5 minutes" title="Snooze 5 minutes">Snooze 5 minutes</button>
+      <button class="stopAlarm" onclick="stopAlarm();" aria-label="Stop Alarm" title="Stop Alarm">Stop Alarm</button>
     </div>
   </div>
   <script src="./assets/js/index.js" type="module"></script>
