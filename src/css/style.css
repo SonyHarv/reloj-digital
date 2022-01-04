@@ -1,8 +1,19 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  font-size: 16px;
+  --yellowMain: #f7df1e;
+  --yellowModal: rgba(247, 222, 30, 0.85);
+  --grisMain: #222;
+  --grisModal: rgba(34, 34, 34, 0.85);
+  --white: #ffffff;
+  --baseFontFamily: "Rubik", Helvetica, arial, sans-serif;
+  --textFontTitle: normal 30px / normal var(--baseFontFamily);
+  --textFont: normal 32px / normal var(--baseFontFamily);
+}
+
+.wrapper {
+  max-block-size: 950px;
+}
+.reloj {
+  font: var(--textFont);
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
