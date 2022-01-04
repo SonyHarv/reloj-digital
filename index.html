@@ -7,7 +7,22 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="wrapper">
+      <div class="reloj">
+        <p>00:00:00</p>
+      </div>
+      <div class="alarm">
+        <label for="inputHour">Ingrese o seleccione la hora de la alarma</label>
+        <input type="time" name="inputHour" id="inputHour" required>
+        <button class="setAlarm" onclick="setAlarm(this);" aria-label="Set Alarm" title="Set Alarm">Set Alarm</button>
+      </div>
+      <div class="snooze">
+        <button class="snoozeAlarm" onclick="snoozeAlarm();" aria-label="Snooze 5 minutes" title="Snooze 5 minutes">Snooze 5
+          minutes</button>
+        <button class="stopAlarm" onclick="stopAlarm();" aria-label="Stop Alarm" title="Stop Alarm">Stop Alarm</button>
+      </div>
+    </div>
+    <!-- <script src="./assets/js/index.js" type="module"></script> -->
     <script type="module" src="/main.js"></script>
   </body>
 </html>
