@@ -52,6 +52,7 @@ setAlarm.addEventListener("click", () => {
   let ms = $("#inputHour").valueAsNumber;
   if (isNaN(ms)) {
     alert("Ingrese la hora especifica");
+    return;
   }
 
   let timeNow = new Date(ms);
@@ -71,5 +72,3 @@ setAlarm.addEventListener("click", () => {
     setTimeout(initAlarm, diffAlarm);
   }
 });
-
-//TODO: Arreglar bug de alrma inicia sola si es un NAN
