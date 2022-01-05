@@ -13,8 +13,8 @@
       </div>
       <div class="alarm">
         <label for="inputHour">Ingrese o seleccione la hora de la alarma</label>
-        <input type="time" name="inputHour" id="inputHour" required>
-        <button class="setAlarm" onclick="setAlarm(this);" aria-label="Set Alarm" title="Set Alarm">Set Alarm</button>
+        <input type="datetime-local" name="inputHour" id="inputHour" required>
+        <button id="setAlarm" class="setAlarm" aria-label="Set Alarm" title="Set Alarm">Set Alarm</button>
       </div>
       <div class="snooze">
         <button class="snoozeAlarm" onclick="snoozeAlarm();" aria-label="Snooze 5 minutes" title="Snooze 5 minutes">Snooze 5
