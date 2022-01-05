@@ -36,4 +36,40 @@ window.onload = function () {
 
 //Alarma
 
-//function
+//function setAlarm
+
+//function init alarm with sound
+let alarmSound = new Audio();
+alarmSound.src = "./src/assets/alarm.mp3";
+const setAlarm = $("#setAlarm");
+
+const initAlarm = () => {
+  alarmSound.play();
+};
+
+//function setAlarm, addEventListener
+setAlarm.addEventListener("click", () => {
+  let ms = $("#inputHour").valueAsNumber;
+  if (isNaN(ms)) {
+    alert("Ingrese la hora especifica");
+  }
+
+  let timeNow = new Date(ms);
+  let timeUtc = new Date(
+    timeNow.getUTCFullYear(),
+    timeNow.getUTCMonth(),
+    timeNow.getUTCDate(),
+    timeNow.getUTCHours(),
+    timeNow.getUTCMinutes(),
+    timeNow.getUTCSeconds()
+  );
+  let diffAlarm = timeUtc.getTime() - new Date().getTime();
+  if (diffAlarm <= 0) {
+    alert("La fecha y hora introducida ya ha pasado");
+    return;
+  } else {
+    setTimeout(initAlarm, diffAlarm);
+  }
+});
+
+//TODO: Arreglar bug de alrma inicia sola si es un NAN
