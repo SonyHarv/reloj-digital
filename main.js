@@ -48,7 +48,7 @@ const initAlarm = () => {
 };
 
 //function setAlarm, addEventListener
-setAlarm.addEventListener("click", () => {
+setAlarm.addEventListener("click", (button) => {
   let ms = $("#inputHour").valueAsNumber;
   if (isNaN(ms)) {
     alert("Ingrese la hora especifica");
@@ -65,10 +65,44 @@ setAlarm.addEventListener("click", () => {
     timeNow.getUTCSeconds()
   );
   let diffAlarm = timeUtc.getTime() - new Date().getTime();
+  console.log(diffAlarm);
   if (diffAlarm <= 0) {
     alert("La fecha y hora introducida ya ha pasado");
     return;
   } else {
     setTimeout(initAlarm, diffAlarm);
+    alert(`Se ha programado la alarma para el ${timeUtc}.`);
+
+    setAlarm.innerText = "Cancel Alarm";
+    console.log("Entro aqui can");
+    console.log(button);
+    // button.setAttribute("title", "cancelAlarm();");
+    // TODO: CAMBIAR EL FORMATO DE FECHA Y HORA PARA EL ALERT AL PROGRAMAR LA ALARMA
   }
+});
+
+function cancelAlarm(button) {
+  button.innerText = "Set Alarm";
+  button.setAttribute("title", "Set Alarm;");
+  console.log("Entro aqui cancelar alarma");
+}
+
+//function Snooze 5 min
+
+const snoozeAlarm = $(".snoozeAlarm");
+
+snoozeAlarm.addEventListener("click", () => {
+  console.log("Entro aqui snoozeAlarm");
+  stopAlarm();
+  setTimeout(initAlarm, 300000);
+});
+
+//function stopAlarm
+
+const stopAlarm = $(".stopAlarm");
+
+stopAlarm.addEventListener("click", () => {
+  // console.log("entro aqui stopALlarm");
+  alarmSound.pause();
+  initAlarm.currentTime = 0;
 });
